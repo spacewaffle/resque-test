@@ -1,0 +1,18 @@
+This is the index page.
+
+
+<script>
+
+var blah = window.setInterval(function(){
+  $.get( "/blah", function( data ) {
+    console.log("the data is " + data)
+    $( "body" ).html("waiting...");
+    if(data == "poop"){
+    $( "body" ).html( data );
+      clearInterval(blah);
+    }
+  });
+
+}, 2000);
+
+</script>
